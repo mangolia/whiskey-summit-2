@@ -9,8 +9,8 @@ export default function BuffaloTrace() {
       <div className="space-y-6">
         <Section title="Welcome to Your Tasting Experience">
           <p className="mb-4">
-            Welcome to your guided journey through Buffalo Trace Bourbon. Together, we'll explore 
-            this exceptional whiskey's character through its color, aroma, taste, and finish. 
+            Welcome to your guided journey through Buffalo Trace Bourbon. Together, we&apos;ll explore 
+            this exceptional whiskey&apos;s character through its color, aroma, taste, and finish. 
             This experience is designed to help you discover and appreciate the complex flavors 
             that make Buffalo Trace unique.
           </p>
@@ -32,7 +32,7 @@ export default function BuffaloTrace() {
             href="/buffalo-trace/tasting-steps" 
             className="bg-[rgb(134,56,12)] hover:bg-[rgb(154,76,32)] text-white font-semibold py-4 px-8 rounded-lg transition-colors text-xl"
           >
-            Let's Sip
+            Let&apos;s Sip
           </Link>
         </div>
       </div>

@@ -23,9 +23,8 @@ export default function ImageUpload() {
 
       if (!response.ok) throw new Error('Upload failed');
 
-      const data = await response.json();
       setMessage('Upload successful!');
-    } catch (error) {
+    } catch {
       setMessage('Upload failed. Please try again.');
     } finally {
       setUploading(false);

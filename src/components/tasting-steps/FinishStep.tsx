@@ -1,11 +1,9 @@
 export default function FinishStep({ 
   title, 
-  description, 
   onNext,
   onPrevious 
 }: {
   title: string;
-  description: string;
   onNext: () => void;
   onPrevious: () => void;
 }) {

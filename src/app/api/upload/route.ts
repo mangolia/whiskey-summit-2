@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     await writeFile(filePath, buffer);
 
     return NextResponse.json({ success: true, filename: file.name });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Upload failed' }, { status: 500 });
   }
 } 

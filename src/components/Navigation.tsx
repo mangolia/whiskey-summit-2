@@ -2,7 +2,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { COLORS } from '@/constants/theme';
 import type { NavItem } from '@/types';
 
 const NAV_ITEMS: NavItem[] = [
