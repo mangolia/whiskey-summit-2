@@ -69,7 +69,6 @@ export default function BuffaloTraceTastingExperience() {
         return (
           <FinishStep
             title={currentStep.title}
-            description={currentStep.description}
             onNext={handleNext}
             onPrevious={handlePrevious}
           />
