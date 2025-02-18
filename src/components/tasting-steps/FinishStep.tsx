@@ -1,25 +1,57 @@
-export default function FinishStep({ 
-  title, 
-  onNext,
-  onPrevious 
-}: {
-  title: string;
+import { useState, useEffect } from 'react';
+
+type FinishBar = {
+  label: string;
+  color: string;
+};
+
+interface FinishStepProps {
   onNext: () => void;
   onPrevious: () => void;
-}) {
-  const finishDescriptions = [
-    { label: "Roasty", color: "rgb(180, 140, 100)" },
-    { label: "Honey", color: "rgb(255, 226, 156)" },
-    { label: "Caramel", color: "rgb(255, 224, 180)" },
-    { label: "Earthy", color: "rgb(160, 140, 120)" },
-    { label: "Toasted Oak", color: "rgb(198, 156, 109)" }
-  ];
+  isFirst?: boolean;
+  isLast?: boolean;
+}
+
+export default function FinishStep({ 
+  onNext, 
+  onPrevious,
+  isFirst = false,
+  isLast = false 
+}: FinishStepProps) {
+  const [description, setDescription] = useState<string>('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [finishDescriptions, setFinishDescriptions] = useState<FinishBar[]>([]);
+
+  useEffect(() => {
+    async function loadFinishData() {
+      try {
+        // Load step data
+        const { buffaloTraceTasting } = await import('@/data/tastings/buffaloTrace');
+        const finishStep = buffaloTraceTasting.steps.find(step => step.id === 'finish');
+        if (finishStep) {
+          setDescription(finishStep.description);
+        }
+
+        // Load finish data
+        const { FINISH_DESCRIPTIONS } = await import('@/data/finish');
+        setFinishDescriptions(FINISH_DESCRIPTIONS);
+      } catch (error) {
+        console.error('Error loading finish data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    loadFinishData();
+  }, []);
+
+  if (isLoading) {
+    return <div>Loading finish information...</div>;
+  }
 
   return (
     <div className="space-y-6">
       <div className="p-6 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4 text-black">{title}</h2>
-        
         <div className="flex items-center gap-4 mb-6">
           <button
             onClick={onPrevious}
@@ -30,7 +62,7 @@ export default function FinishStep({
             </svg>
           </button>
 
-          <p className="text-black flex-1 text-center">Pay attention to how the flavors linger and evolve after swallowing. Do you taste any of these flavors?</p>
+          <p className="text-black flex-1 text-center">{description}</p>
 
           <button
             onClick={onNext}

@@ -1,23 +1,39 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import WelcomeStep from '@/components/tasting-steps/WelcomeStep';
-import ColorStep from '@/components/tasting-steps/ColorStep';
-import NoseStep from '@/components/tasting-steps/NoseStep';
-import TasteStep from '@/components/tasting-steps/TasteStep';
-import FinishStep from '@/components/tasting-steps/FinishStep';
-import { buffaloTraceTasting } from '@/data/tastings/buffaloTrace';
+import dynamic from 'next/dynamic';
+
+// Dynamic imports for each step component
+const ColorStep = dynamic(() => import('@/components/tasting-steps/ColorStep'), {
+  loading: () => <div>Loading...</div>
+});
+const NoseStep = dynamic(() => import('@/components/tasting-steps/NoseStep'), {
+  loading: () => <div>Loading...</div>
+});
+const TasteStep = dynamic(() => import('@/components/tasting-steps/TasteStep'), {
+  loading: () => <div>Loading...</div>
+});
+const FinishStep = dynamic(() => import('@/components/tasting-steps/FinishStep'), {
+  loading: () => <div>Loading...</div>
+});
+const TastingSummaryStep = dynamic(() => import('@/components/tasting-steps/TastingSummaryStep'), {
+  loading: () => <div>Loading...</div>
+});
+
+// Separate data loading function
+async function loadStepData(stepId: string) {
+  const { buffaloTraceTasting } = await import('@/data/tastings/buffaloTrace');
+  return buffaloTraceTasting.steps.find(step => step.id === stepId);
+}
 
 export default function BuffaloTraceTastingExperience() {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const router = useRouter();
-  const steps = buffaloTraceTasting.steps;
+  const steps = ['color', 'nose', 'taste', 'finish', 'summary'];
   const currentStep = steps[currentStepIndex];
 
   const handleNext = () => {
-    if (currentStepIndex === steps.length - 1) {
-      router.push('/buffalo-trace');
-    } else {
+    if (currentStepIndex < steps.length - 1) {
       setCurrentStepIndex(currentStepIndex + 1);
     }
   };
@@ -29,58 +45,62 @@ export default function BuffaloTraceTastingExperience() {
   };
 
   const renderStep = () => {
-    switch (currentStep.id) {
-      case 'about':
-        return (
-          <WelcomeStep
-            title={currentStep.title}
-            description={currentStep.description}
-            onNext={handleNext}
-          />
-        );
+    switch (currentStep) {
       case 'color':
         return (
           <ColorStep
-            title={currentStep.title}
-            description={currentStep.description}
             onNext={handleNext}
             onPrevious={handlePrevious}
+            isFirst={currentStepIndex === 0}
+            isLast={currentStepIndex === steps.length - 1}
           />
         );
       case 'nose':
         return (
           <NoseStep
-            title={currentStep.title}
-            description={currentStep.description}
             onNext={handleNext}
             onPrevious={handlePrevious}
+            isFirst={currentStepIndex === 0}
+            isLast={currentStepIndex === steps.length - 1}
           />
         );
       case 'taste':
         return (
           <TasteStep
-            title={currentStep.title}
-            description={currentStep.description}
+            title="Taste"
+            description="Take a small sip and let it coat your entire palate. Notice how the flavors develop and change."
             onNext={handleNext}
             onPrevious={handlePrevious}
+            isFirst={currentStepIndex === 0}
+            isLast={currentStepIndex === steps.length - 1}
           />
         );
       case 'finish':
         return (
           <FinishStep
-            title={currentStep.title}
             onNext={handleNext}
             onPrevious={handlePrevious}
+            isFirst={currentStepIndex === 0}
+            isLast={currentStepIndex === steps.length - 1}
           />
         );
+      case 'summary':
+        return <TastingSummaryStep />;
     }
   };
 
   return (
     <div className="max-w-4xl mx-auto p-8">
-      <h1 className="text-4xl font-bold text-center mb-8">
-        {buffaloTraceTasting.name} Tasting Experience
-      </h1>
+      {currentStep !== 'summary' && (
+        <h1 className="text-4xl font-bold text-center mb-8 text-oaklore-blue">
+          {currentStep.charAt(0).toUpperCase() + currentStep.slice(1)}
+        </h1>
+      )}
+      {currentStep === 'summary' && (
+        <h1 className="text-4xl font-bold text-center mb-8 text-oaklore-blue">
+          Your Tasting Experience
+        </h1>
+      )}
       {renderStep()}
     </div>
   );

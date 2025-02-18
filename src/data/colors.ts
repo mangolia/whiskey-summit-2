@@ -1,0 +1,22 @@
+export const WHISKEY_COLORS = [
+  { label: "Clear", color: "rgb(255, 255, 255)" },
+  { label: "White Wine", color: "rgb(255, 253, 220)" },
+  { label: "Pale Straw", color: "rgb(254, 238, 151)" },
+  { label: "Pale Gold", color: "rgb(251, 234, 119)" },
+  { label: "Yellow Gold", color: "rgb(248, 220, 85)" },
+  { label: "Old Gold", color: "rgb(248, 215, 73)" },
+  { label: "Amber", color: "rgb(247, 207, 73)" },
+  { label: "Deep Gold", color: "rgb(245, 201, 76)" },
+  { label: "Sherry", color: "rgb(246, 194, 59)" },
+  { label: "Deep Copper", color: "rgb(245, 190, 48)" },
+  { label: "Burnished", color: "rgb(234, 173, 7)" },
+  { label: "Oloroso Sherry", color: "rgb(231, 158, 20)" },
+  { label: "Chestnut Muscat", color: "rgb(229, 149, 2)" },
+  { label: "Gold Brown", color: "rgb(220, 116, 21)" },
+  { label: "Polished Mahogany", color: "rgb(224, 101, 41)" },
+  { label: "Mahogany", color: "rgb(204, 79, 47)" },
+  { label: "Brown Chocolate", color: "rgb(175, 48, 41)" },
+  { label: "Old Cask", color: "rgb(158, 35, 28)" },
+  { label: "Brown Sherry", color: "rgb(114, 45, 29)" },
+  { label: "Black", color: "rgb(66, 27, 10)" }
+] as const; 

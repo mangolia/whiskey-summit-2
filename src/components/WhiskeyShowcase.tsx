@@ -4,9 +4,9 @@ import { WhiskeyCard } from "./WhiskeyCard";
 
 const FEATURED_WHISKEYS = [
   {
-    title: 'Buffalo Trace',
+    title: "Maker's Mark",
     description: 'Kentucky Straight Bourbon Whiskey',
-    age: '8 years',
+    age: '5-7 years',
     abv: '45%',
     origin: 'Kentucky, USA'
   },

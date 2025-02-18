@@ -21,6 +21,8 @@ interface TasteStepProps {
   description: string;
   onNext: () => void;
   onPrevious: () => void;
+  isFirst?: boolean;
+  isLast?: boolean;
 }
 
 const BUFFALO_TRACE_HIGHLIGHTS: WhiskeyTaste[] = [
@@ -156,7 +158,9 @@ export default function TasteStep({
   title, 
   description, 
   onNext,
-  onPrevious 
+  onPrevious,
+  isFirst = false,
+  isLast = false 
 }: TasteStepProps) {
   const renderHighlights = React.useMemo(() => (
     <div className="flex flex-wrap gap-2">
@@ -174,8 +178,6 @@ export default function TasteStep({
   return (
     <div className="space-y-6">
       <div className="p-6 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4 text-black">{title}</h2>
-        
         <div className="flex items-center gap-4 mb-6">
           <button
             onClick={onPrevious}

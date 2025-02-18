@@ -4,7 +4,7 @@ export default function BuffaloTraceLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="bg-page-buffalo min-h-screen">
+    <div className="bg-page min-h-screen">
       {children}
     </div>
   );

@@ -5,9 +5,11 @@ type SectionProps = {
 
 export default function Section({ title, children }: SectionProps) {
   return (
-    <section className="bg-[rgb(3,22,52)] text-[rgb(255,253,252)] p-6 rounded-lg">
-      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-      {children}
+    <section className="bg-page p-6 rounded-lg border border-gray-200">
+      <h2 className="text-2xl font-semibold mb-4 text-oaklore-blue">{title}</h2>
+      <div className="text-gray-700">
+        {children}
+      </div>
     </section>
   );
 } 

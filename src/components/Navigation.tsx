@@ -5,12 +5,8 @@ import { usePathname } from 'next/navigation';
 import type { NavItem } from '@/types';
 
 const NAV_ITEMS: NavItem[] = [
-  { title: 'Match Game', href: '/match-game' },
   { title: 'Tasting Notes', href: '/tasting-notes' },
   { title: 'Buffalo Trace Whiskey', href: '/buffalo-trace' },
-  { title: 'Whiskey History', href: '/whiskey-history' },
-  { title: 'Barrel Aging', href: '/barrel-aging' },
-  { title: 'Admin', href: '/admin' },
 ];
 
 export default function Navigation() {
