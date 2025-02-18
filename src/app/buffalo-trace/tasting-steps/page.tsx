@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
 // Dynamic imports for each step component
@@ -20,15 +19,8 @@ const TastingSummaryStep = dynamic(() => import('@/components/tasting-steps/Tast
   loading: () => <div>Loading...</div>
 });
 
-// Separate data loading function
-async function loadStepData(stepId: string) {
-  const { buffaloTraceTasting } = await import('@/data/tastings/buffaloTrace');
-  return buffaloTraceTasting.steps.find(step => step.id === stepId);
-}
-
 export default function BuffaloTraceTastingExperience() {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
-  const router = useRouter();
   const steps = ['color', 'nose', 'taste', 'finish', 'summary'];
   const currentStep = steps[currentStepIndex];
 
