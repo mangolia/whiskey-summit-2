@@ -16,15 +16,11 @@ type ScentCategory = {
 interface NoseStepProps {
   onNext: () => void;
   onPrevious: () => void;
-  isFirst?: boolean;
-  isLast?: boolean;
 }
 
 export default function NoseStep({ 
   onNext, 
-  onPrevious,
-  isFirst = false,
-  isLast = false 
+  onPrevious
 }: NoseStepProps) {
   const [description, setDescription] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);

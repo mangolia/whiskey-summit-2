@@ -8,15 +8,11 @@ type FinishBar = {
 interface FinishStepProps {
   onNext: () => void;
   onPrevious: () => void;
-  isFirst?: boolean;
-  isLast?: boolean;
 }
 
 export default function FinishStep({ 
   onNext, 
-  onPrevious,
-  isFirst = false,
-  isLast = false 
+  onPrevious
 }: FinishStepProps) {
   const [description, setDescription] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);

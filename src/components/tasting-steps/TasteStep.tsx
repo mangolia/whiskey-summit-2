@@ -17,12 +17,9 @@ type TasteCategory = {
 };
 
 interface TasteStepProps {
-  title: string;
   description: string;
   onNext: () => void;
   onPrevious: () => void;
-  isFirst?: boolean;
-  isLast?: boolean;
 }
 
 const BUFFALO_TRACE_HIGHLIGHTS: WhiskeyTaste[] = [
@@ -155,12 +152,9 @@ const WHISKEY_TASTES: TasteCategory[] = [
 ];
 
 export default function TasteStep({ 
-  title, 
   description, 
   onNext,
-  onPrevious,
-  isFirst = false,
-  isLast = false 
+  onPrevious
 }: TasteStepProps) {
   const renderHighlights = React.useMemo(() => (
     <div className="flex flex-wrap gap-2">
