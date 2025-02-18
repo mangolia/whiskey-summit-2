@@ -43,8 +43,6 @@ export default function BuffaloTraceTastingExperience() {
           <ColorStep
             onNext={handleNext}
             onPrevious={handlePrevious}
-            isFirst={currentStepIndex === 0}
-            isLast={currentStepIndex === steps.length - 1}
           />
         );
       case 'nose':
@@ -52,19 +50,14 @@ export default function BuffaloTraceTastingExperience() {
           <NoseStep
             onNext={handleNext}
             onPrevious={handlePrevious}
-            isFirst={currentStepIndex === 0}
-            isLast={currentStepIndex === steps.length - 1}
           />
         );
       case 'taste':
         return (
           <TasteStep
-            title="Taste"
             description="Take a small sip and let it coat your entire palate. Notice how the flavors develop and change."
             onNext={handleNext}
             onPrevious={handlePrevious}
-            isFirst={currentStepIndex === 0}
-            isLast={currentStepIndex === steps.length - 1}
           />
         );
       case 'finish':
@@ -72,8 +65,6 @@ export default function BuffaloTraceTastingExperience() {
           <FinishStep
             onNext={handleNext}
             onPrevious={handlePrevious}
-            isFirst={currentStepIndex === 0}
-            isLast={currentStepIndex === steps.length - 1}
           />
         );
       case 'summary':
