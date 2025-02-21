@@ -98,7 +98,7 @@ export default function NoseStep({
         </div>
         
         <div className="mb-8">
-          <h3 className="text-lg font-semibold text-black mb-3">Key Aromas in Buffalo Trace:</h3>
+          <h3 className="text-lg font-semibold text-black mb-3">Key Aromas in Oaklore Four Grain Bourbon:</h3>
           {renderHighlights}
         </div>
         

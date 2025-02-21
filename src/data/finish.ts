@@ -1,14 +1,13 @@
 export const BUFFALO_TRACE_HIGHLIGHTS = [
-  "Roasty",
+  "Butterscotch",
   "Honey",
-  "Caramel",
-  "Earthy",
+  "Light Baking Spice",
   "Toasted Oak"
 ];
 
 export const FINISH_DESCRIPTIONS = [
   { 
-    label: "Roasty", 
+    label: "Butterscotch", 
     color: "rgb(180, 140, 100)",
     isHighlighted: true
   },
@@ -18,13 +17,8 @@ export const FINISH_DESCRIPTIONS = [
     isHighlighted: true
   },
   { 
-    label: "Caramel", 
+    label: "Light Baking Spice", 
     color: "rgb(255, 224, 180)",
-    isHighlighted: true
-  },
-  { 
-    label: "Earthy", 
-    color: "rgb(160, 140, 120)",
     isHighlighted: true
   },
   { 
@@ -32,19 +26,4 @@ export const FINISH_DESCRIPTIONS = [
     color: "rgb(198, 156, 109)",
     isHighlighted: true
   },
-  { 
-    label: "Spicy", 
-    color: "rgb(200, 120, 80)",
-    isHighlighted: false
-  },
-  { 
-    label: "Vanilla", 
-    color: "rgb(255, 245, 220)",
-    isHighlighted: false
-  },
-  { 
-    label: "Nutty", 
-    color: "rgb(210, 180, 140)",
-    isHighlighted: false
-  }
 ]; 

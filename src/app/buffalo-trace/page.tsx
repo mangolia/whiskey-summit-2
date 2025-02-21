@@ -4,27 +4,24 @@ import Link from 'next/link';
 export default function BuffaloTrace() {
   return (
     <div className="max-w-4xl mx-auto p-8">
-      <h1 className="text-4xl font-bold text-center mb-8 text-oaklore-blue">Buffalo Trace Whiskey</h1>
+      <h1 className="text-4xl font-bold text-center mb-8 text-oaklore-blue">Four Grain Bourbon Whiskey</h1>
       
       <div className="space-y-6">
         <Section title="Welcome to Your Tasting Experience">
           <p className="mb-4">
-            Welcome to your guided journey through Buffalo Trace Bourbon. Together, we&apos;ll explore 
+            Welcome to your guided journey through Oaklore&apos;s Four Grain Bourbon. Together, we&apos;ll explore 
             this exceptional whiskey&apos;s character through its color, aroma, taste, and finish. 
             This experience is designed to help you discover and appreciate the complex flavors 
-            that make Buffalo Trace unique.
+            that make this bourbon unique.
           </p>
         </Section>
 
-        <Section title="About Buffalo Trace">
+        <Section title="About Four Grain Bourbon Whiskey">
           <div>
             <p className="mb-4">
-              Buffalo Trace Distillery is the oldest continuously operating distillery in America, 
-              crafting legendary bourbon for more than 200 years.
-            </p>
-            <p>
-              Located in Frankfort, Kentucky, this historic distillery continues to win awards for 
-              its wide variety of bourbons and whiskeys.
+            Our flagship spirit embodies the bold, savory character that defines Oaklore.  
+            This unique four-grain bourbon brings together wheat, rye, corn, and barley, 
+            all aged to perfection for 4-6 years. It&apos;s a testament to our commitment to crafting exceptional spirits,
             </p>
           </div>
         </Section>

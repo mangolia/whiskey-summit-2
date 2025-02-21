@@ -4,10 +4,8 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === "production",
   },
   experimental: {
-    optimizeCss: {
-      inlineFonts: false,
-    },
-  },
+    optimizeCss: true
+  }
 };
 
 module.exports = nextConfig; 

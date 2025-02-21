@@ -1,5 +1,5 @@
 export const BUFFALO_TRACE_HIGHLIGHTS = [
-  "Vanilla", "Brown Sugar", "Toffee", "Orange", "Mint", "Oak", "Dark Chocolate"
+  "Vanilla", "Custard", "Toffee", "Oak"
 ] as const;
 
 export const WHISKEY_TASTES = [
@@ -12,7 +12,7 @@ export const WHISKEY_TASTES = [
           { name: "Caramel", color: "rgb(255, 224, 180)" },
           { name: "Toffee", color: "rgb(210, 180, 140)", isHighlighted: true },
           { name: "Butterscotch", color: "rgb(255, 214, 170)" },
-          { name: "Brown Sugar", color: "rgb(193, 154, 107)", isHighlighted: true }
+          { name: "Brown Sugar", color: "rgb(193, 154, 107)" }
         ]
       },
       {
@@ -20,7 +20,7 @@ export const WHISKEY_TASTES = [
         tastes: [
           { name: "Vanilla", color: "rgb(255, 253, 208)", isHighlighted: true },
           { name: "Cream", color: "rgb(255, 253, 228)" },
-          { name: "Custard", color: "rgb(255, 248, 200)" }
+          { name: "Custard", color: "rgb(255, 248, 200)", isHighlighted: true }
         ]
       },
       {
@@ -39,7 +39,7 @@ export const WHISKEY_TASTES = [
       {
         name: "Citrus",
         tastes: [
-          { name: "Orange", color: "rgb(255, 231, 186)", isHighlighted: true },
+          { name: "Orange", color: "rgb(255, 231, 186)" },
           { name: "Lemon", color: "rgb(255, 247, 186)" },
           { name: "Lime", color: "rgb(230, 255, 186)" }
         ]
@@ -97,7 +97,7 @@ export const WHISKEY_TASTES = [
       {
         name: "Herbs",
         tastes: [
-          { name: "Mint", color: "rgb(220, 255, 220)", isHighlighted: true },
+          { name: "Mint", color: "rgb(220, 255, 220)" },
           { name: "Eucalyptus", color: "rgb(200, 255, 200)" },
           { name: "Dill", color: "rgb(230, 238, 213)" }
         ]
@@ -110,7 +110,7 @@ export const WHISKEY_TASTES = [
       {
         name: "Chocolate",
         tastes: [
-          { name: "Dark Chocolate", color: "rgb(77, 46, 38)", isHighlighted: true },
+          { name: "Dark Chocolate", color: "rgb(77, 46, 38)" },
           { name: "Milk Chocolate", color: "rgb(139, 69, 19)" },
           { name: "Cocoa", color: "rgb(93, 47, 47)" }
         ]

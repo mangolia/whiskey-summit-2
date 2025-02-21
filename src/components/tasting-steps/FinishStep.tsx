@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 
+type WhiskeyFinish = string;
 type FinishBar = {
-  label: string;
-  color: string;
+  readonly label: string;
+  readonly color: string;
+  readonly isHighlighted?: boolean;
 };
 
 interface FinishStepProps {
@@ -16,7 +18,8 @@ export default function FinishStep({
 }: FinishStepProps) {
   const [description, setDescription] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
-  const [finishDescriptions, setFinishDescriptions] = useState<FinishBar[]>([]);
+  const [finishDescriptions, setFinishDescriptions] = useState<readonly FinishBar[]>([]);
+  const [highlights, setHighlights] = useState<readonly WhiskeyFinish[]>([]);
 
   useEffect(() => {
     async function loadFinishData() {
@@ -29,8 +32,9 @@ export default function FinishStep({
         }
 
         // Load finish data
-        const { FINISH_DESCRIPTIONS } = await import('@/data/finish');
+        const { FINISH_DESCRIPTIONS, BUFFALO_TRACE_HIGHLIGHTS } = await import('@/data/finish');
         setFinishDescriptions(FINISH_DESCRIPTIONS);
+        setHighlights(BUFFALO_TRACE_HIGHLIGHTS);
       } catch (error) {
         console.error('Error loading finish data:', error);
       } finally {
@@ -69,13 +73,27 @@ export default function FinishStep({
             </svg>
           </button>
         </div>
+
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold text-black mb-3">Key Finish Notes in Buffalo Trace:</h3>
+          <div className="flex flex-wrap gap-2">
+            {highlights.map((finish, index) => (
+              <span 
+                key={`highlight-${finish}-${index}`} 
+                className="px-3 py-1 bg-[rgb(134,56,12)] text-white rounded-full text-sm"
+              >
+                {finish}
+              </span>
+            ))}
+          </div>
+        </div>
         
         <div className="flex flex-col items-center space-y-2 mt-8">
           {finishDescriptions.map((finish, index) => (
             <div key={index} className="flex items-center w-full max-w-md justify-between">
               <span className="text-black w-32">{finish.label}</span>
               <div 
-                className="h-8 w-48 rounded border border-gray-200"
+                className={`h-8 w-48 rounded border ${finish.isHighlighted ? 'border-[rgb(134,56,12)] border-2' : 'border-gray-200'}`}
                 style={{ backgroundColor: finish.color }}
               />
             </div>

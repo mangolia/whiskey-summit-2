@@ -17,8 +17,8 @@ type NavigationItem = {
 
 const NAVIGATION_ITEMS: NavigationItem[] = [
   { 
-    title: 'Buffalo Trace Whiskey',
-    description: 'Experience our guided bourbon tasting journey',
+    title: 'Four Grain Bourbon',
+    description: 'Explore this exceptional NC bourbon',
     href: '/buffalo-trace'
   },
   { 

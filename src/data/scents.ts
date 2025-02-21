@@ -1,5 +1,5 @@
 export const BUFFALO_TRACE_HIGHLIGHTS = [
-  "Caramel", "Vanilla", "Honey", "Orange Zest", "Leather", "Oak", "Apricot"
+  "Toasted Pecan", "Honey Butter Cake", "Oak"
 ] as const;
 
 export const WHISKEY_SCENTS = [
@@ -9,20 +9,20 @@ export const WHISKEY_SCENTS = [
       { name: "Apple", color: "rgb(255, 230, 230)" },
       { name: "Pear", color: "rgb(236, 255, 220)" },
       { name: "Cherry", color: "rgb(255, 200, 200)" },
-      { name: "Orange Zest", color: "rgb(255, 231, 186)", isHighlighted: true },
+      { name: "Orange Zest", color: "rgb(255, 231, 186)" },
       { name: "Dried Fruit", color: "rgb(255, 218, 185)" },
-      { name: "Apricot", color: "rgb(255, 215, 170)", isHighlighted: true },
+      { name: "Apricot", color: "rgb(255, 215, 170)" },
       { name: "Citrus Peel", color: "rgb(255, 245, 186)" }
     ]
   },
   {
     category: "Sweet",
     scents: [
-      { name: "Vanilla", color: "rgb(255, 253, 208)", isHighlighted: true },
-      { name: "Caramel", color: "rgb(255, 224, 180)", isHighlighted: true },
-      { name: "Honey", color: "rgb(255, 226, 156)", isHighlighted: true },
+      { name: "Vanilla", color: "rgb(255, 253, 208)", },
+      { name: "Caramel", color: "rgb(255, 224, 180)", },
+      { name: "Honey", color: "rgb(255, 226, 156)" },
       { name: "Butterscotch", color: "rgb(255, 214, 170)" },
-      { name: "Toffee", color: "rgb(210, 180, 140, 0.3)" },
+      { name: "Honey Butter Cake", color: "rgb(210, 180, 140, 0.3)", isHighlighted: true },
       { name: "Brown Sugar", color: "rgb(193, 154, 107, 0.2)" },
       { name: "Maple", color: "rgb(255, 200, 150)" }
     ]
@@ -35,7 +35,7 @@ export const WHISKEY_SCENTS = [
       { name: "Pine", color: "rgb(205, 233, 144, 0.3)" },
       { name: "Toasted Wood", color: "rgb(198, 156, 109, 0.2)" },
       { name: "Charred Oak", color: "rgb(169, 132, 103, 0.2)" },
-      { name: "Leather", color: "rgb(150, 113, 76, 0.2)", isHighlighted: true }
+      { name: "Leather", color: "rgb(150, 113, 76, 0.2)", }
     ]
   },
   {
@@ -66,7 +66,7 @@ export const WHISKEY_SCENTS = [
     scents: [
       { name: "Almond", color: "rgb(255, 235, 205)" },
       { name: "Walnut", color: "rgb(173, 129, 80, 0.2)" },
-      { name: "Pecan", color: "rgb(196, 164, 132, 0.2)" },
+      { name: "Toasted Pecan", color: "rgb(196, 164, 132, 0.2)", isHighlighted: true },
       { name: "Roasted Nuts", color: "rgb(205, 170, 125, 0.2)" },
       { name: "Marzipan", color: "rgb(255, 228, 196)" }
     ]
